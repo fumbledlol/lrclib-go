@@ -1,7 +1,6 @@
 package lrclib
 
 import (
-	"context"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -66,7 +65,7 @@ func TestClient_Get(t *testing.T) {
 		WithMinInterval(0),
 	)
 
-	l, err := client.Get(context.Background(), "Sample Track", "Sample Artist", "", 0)
+	l, err := client.Get(t.Context(), "Sample Track", "Sample Artist", "", 0)
 	if err != nil {
 		t.Fatalf("Get failed: %v", err)
 	}
